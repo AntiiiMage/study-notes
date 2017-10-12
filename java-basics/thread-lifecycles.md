@@ -19,17 +19,21 @@ TERMINATED | A thread whose run() method has finished is in this state (still a 
 (http://github.com/AntiiiMage/study-notes/blob/master/java-basics/images/thread-state-switch.png)
 
 ###yield()
+
 A hint to the scheduler that the current thread is willing to yield its current use of a processor. The scheduler is free to ignore this hint.
 
 It is rarely appropriate to use this method. It may be useful for debugging or testing purposes, where it may help to reproduce bugs due to race conditions. It may also be useful when designing concurrency control constructs such as the ones in the java.util.concurrent.locks package.
 
 ###sleep(long millis)
+
 Causes the currently executing thread to sleep (temporarily cease execution) for the specified number of milliseconds, subject to the precision and accuracy of system timers and schedulers. The thread does not lose ownership of any monitors.
 
 ###join()
+
 If thread A calls join() on a Thread instance B, A will wait for B to complete its execution before A can proceed to its own completion.
 
 Method join() guarantees that the calling thread won’t exe- cute its remaining code until the thread on which it calls join() completes.
 
 ###wait()
+
 A thread can pause its execution and wait on an object, a queue in this case, by calling wait(), until another thread calls notify() or notify- All() on the same object.
