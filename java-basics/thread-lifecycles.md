@@ -1,8 +1,7 @@
 
-##States in Thread
+##States in Thread  
 
-![Thread State]
-(http://github.com/AntiiiMage/study-notes/blob/master/java-basics/images/thread-states.png)
+![Thread State](http://github.com/AntiiiMage/study-notes/blob/master/java-basics/images/thread-states.png)
 
 Thread state | Description
 ---- | ---
@@ -13,10 +12,9 @@ WAITING | A thread that’s waiting indefinitely for another thread to perform a
 TIMED_WAITING | A thread that’s waiting for another thread to perform an action for up to a speci- fied waiting time is in this state. 
 TERMINATED | A thread whose run() method has finished is in this state (still a thread object but not a thread of execution).
 
-##Pause the Thread
+##Pause the Thread  
 
-![StateSwitch]
-(http://github.com/AntiiiMage/study-notes/blob/master/java-basics/images/thread-state-switch.png)
+![StateSwitch](http://github.com/AntiiiMage/study-notes/blob/master/java-basics/images/thread-state-switch.png)
 
 ###yield()
 
