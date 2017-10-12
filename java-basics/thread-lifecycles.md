@@ -1,6 +1,7 @@
 
 ##States in Thread
-![Thread State](https://antiiimage.github.io/java-basics/resources/images/thread-states.png)
+
+![Thread State](https://github.com/AntiiiMage/study-notes/java-basics/images/thread-states.png)
 
 Thread state | Description
 ---- | ---
