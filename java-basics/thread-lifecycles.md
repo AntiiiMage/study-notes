@@ -13,7 +13,9 @@ TIMED_WAITING | A thread that’s waiting for another thread to perform an actio
 TERMINATED | A thread whose run() method has finished is in this state (still a thread object but not a thread of execution).
 
 ##Pause the Thread
-![StateSwitch](https://antiiimage.github.io/java-basics/resources/images/thread-states.png)
+
+![StateSwitch](https://https://github.com/AntiiiMage/study-notes/blob/master/java-basics/images/thread-state-switch.png)
+
 ###yield()
 A hint to the scheduler that the current thread is willing to yield its current use of a processor. The scheduler is free to ignore this hint.
 
