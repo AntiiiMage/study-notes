@@ -2,7 +2,7 @@
 ##States in Thread
 
 ![Thread State]
-(https://github.com/AntiiiMage/study-notes/blob/master/java-basics/images/thread-states.png)
+(http://github.com/AntiiiMage/study-notes/blob/master/java-basics/images/thread-states.png)
 
 Thread state | Description
 ---- | ---
@@ -16,7 +16,7 @@ TERMINATED | A thread whose run() method has finished is in this state (still a 
 ##Pause the Thread
 
 ![StateSwitch]
-(https://https://github.com/AntiiiMage/study-notes/blob/master/java-basics/images/thread-state-switch.png)
+(http://github.com/AntiiiMage/study-notes/blob/master/java-basics/images/thread-state-switch.png)
 
 ###yield()
 A hint to the scheduler that the current thread is willing to yield its current use of a processor. The scheduler is free to ignore this hint.
