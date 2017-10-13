@@ -3,7 +3,7 @@ We will discuss three comparison-based sorting algorithms in the next few slides
 ### Selection Sort,
 ### Insertion Sort.
 They are called comparison-based as they compare pairs of elements of the array and decide whether to swap them or not.
-These three sorting algorithms are the easiest to implement but also not the most efficient, as they run in ##O(N2)##.
+These three sorting algorithms are the easiest to implement but also not the most efficient, as they run in **O(N2)**.
 # Bubble Sorting
 ```
 do
