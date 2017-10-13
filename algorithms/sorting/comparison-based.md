@@ -2,8 +2,10 @@ We will discuss three comparison-based sorting algorithms in the next few slides
 * Bubble Sort,
 * Selection Sort,
 * Insertion Sort.
+
 They are called comparison-based as they compare pairs of elements of the array and decide whether to swap them or not.
-These three sorting algorithms are the easiest to implement but also not the most efficient, as they run in **O(N^2)**.
+
+These three sorting algorithms are the easiest to implement but also not the most efficient, as they run in **O(N^2)**.  
 # Bubble Sorting
 There are two nested loops in (the standard) Bubble Sort.The outer loop runs for exactly N iterations.But the inner loop runs get shorter and shorter:  
 When i=0, (N−1) iterations (of comparisons and possibly swaps),  
@@ -51,9 +53,10 @@ The outer loop executes N−1 times, that's quite clear.
 
 But the number of times the inner-loop is executed depends on the input:  
 * In best-case scenario, the array is already sorted and (a[j] > X) is always false
-So no shifting of data is necessary and the inner loop runs in O(1),
+So no shifting of data is necessary and the inner loop runs in O(1),  
 * In worst-case scenario, the array is reverse sorted and (a[j] > X) is always true
 Insertion always occur at the front of the array and the inner loop runs in O(N).  
+
 Thus, the best-case time is O(N × 1) = O(N) and the worst-case time is O(N × N) = O(N2).
 
 
