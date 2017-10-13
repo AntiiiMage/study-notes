@@ -3,7 +3,7 @@ We will discuss three comparison-based sorting algorithms in the next few slides
 ### Selection Sort,
 ### Insertion Sort.
 They are called comparison-based as they compare pairs of elements of the array and decide whether to swap them or not.
-These three sorting algorithms are the easiest to implement but also not the most efficient, as they run in **O(N2)**.
+These three sorting algorithms are the easiest to implement but also not the most efficient, as they run in **O(N^2)**.
 # Bubble Sorting
 There are two nested loops in (the standard) Bubble Sort.The outer loop runs for exactly N iterations.But the inner loop runs get shorter and shorter:  
 When i=0, (N−1) iterations (of comparisons and possibly swaps),  
@@ -22,3 +22,30 @@ do
       swapped = true
 while swapped
 ```
+# Selection Sort
+Total: O(N2) 
+```
+void selectionSort(int a[], int N){
+  for(int L = 0; L < N - 1; L++){ // O(N)
+    find the position of the minimum element X ∈ [L..N-1] // O(N)
+    swap(X, L) // O(1), note that X may be equal to L (no actual swap)
+  }
+}
+```
+# Insert Sort
+Insertion sort is similar to how most people arrange a hand of poker cards:  
+* Start with one card in your hand,
+* Pick the next card and insert it into its proper sorted order,
+* Repeat previous step for all cards.
+```
+void insertionSort(int a[], int N) {
+  for (int i = 1; i < N; i++) { // O(N)
+    X = a[i]; // X is the item to be inserted
+    for (j = i-1; j >= 0 && a[j] > X; j--) // can be fast or slow
+      a[j+1] = a[j]; // make a place for X
+    a[j+1] = X; // this is the insertion point
+  }
+}
+```
+
+
