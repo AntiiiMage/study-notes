@@ -3,12 +3,12 @@ Merge k sorted linked lists and return it as one sorted list.
 
 Analyze and describe its complexity.
 
-###Notice
+### Notice
 You should do really partition in array nums instead of just counting the numbers of integers smaller than k.
 
 If all elements in nums are smaller than k, then return nums.length
 
-###Example
+### Example
 Given 
 ```
 [
