@@ -10,25 +10,32 @@ Merge Sort is a Divide and Conquer sorting algorithm:
 * The divide step is simple: Divide the current array into two halves (perfectly equal if N is even or one side is slightly greater by one element if N is odd) and then recursively sort the two halves.
 * The conquer step is the one that does the most work: Merge the two (sorted) halves to form a sorted array, using the merge routine discussed earlier.
 ```java
+public void mergeSort(int[] arr, int start, int end) {
+        if (start < end) {
+            //Divide
+            int mid = (start + end) / 2; //Divide
+            mergeSort(arr, start, mid);
+            mergeSort(arr, mid + 1, end);
+            merge(arr, start, mid, end); //Conquer
+        }
+    }
 public void merge(final int[] arr, final int low, final int mid, final int high) {
-        if (arr.length == 1 || arr.length == 0) {
+        if (low == high) {
             return;
         }
-        //elements are sorted in tow partitions:  [leftIndex, midIndex], [midIndex, rightIndex]
-        int N = arr.length;
+        //elements are sorted in [low, mid], [mid + 1, high]
+        int N = high - low + 1;
         int[] sorted = new int[N];
         int left = low;
         int right = mid + 1;
         int bIndex = 0;
-        while (left <= mid && right <= high) {
+        while (left <= mid && right <= high) { //Compare and take min element, increment partition index if taken
             sorted[bIndex++] = arr[left] < arr[right] ? arr[left++] : arr[right++];
         }
-        while (left <= mid) {
-            sorted[bIndex++] = arr[left++];
+        while (left <= mid) {sorted[bIndex++] = arr[left++];} //Leftover, if any
+        while (right <= high) {sorted[bIndex++] = arr[right++];} //Rightover, if any
+        for (int i = low; i <= high; i++) { //copy
+            arr[i] = sorted[i - low];
         }
-        while (right <= high) {
-            sorted[bIndex++] = arr[right++];
-        }
-        System.arraycopy(sorted, 0, arr, 0, N);
-    }
+}
 ```
