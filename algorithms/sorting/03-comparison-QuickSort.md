@@ -14,29 +14,25 @@ If you compare this with Merge Sort, you will see that Quick Sort D&C steps are 
 
 ## Quick Sort Implementation
 ```java
-public void quickSort(final int[] arr,final int start, final int end){
-  if(start < end){
-      int storeIndex = fixStart(arr, start, end);
-      quickSort(arr, start, storeIndex - 1);
-      quickSort(arr, storeIndex + 1, end);
-  }
+public void quickSort(final int[] arr, final int start, final int end) {
+    if (start < end) {
+        int storeIndex = partition(arr, start, end);
+        quickSort(arr, start, storeIndex - 1);
+        quickSort(arr, storeIndex + 1, end);
+    }
 
 }
 
-public int fixStart(final int[] arr,final int start, final int end){
-  int pivot = arr[start];
-  int storeIndex = start;
-  for(int i = start + 1; i <= end; i ++){
-      if(arr[i] < pivot){ // put smaller value in arr[i] into arr[start...storeIndex - 1]
-          swap(arr, storeIndex + 1, i);
-          storeIndex ++; // inrement storeIndex
-      }
-  }
-  int finalStoreIndex = start;
-  if(pivot > arr[storeIndex]){// again put smaller value in arr[storeIndex] into arr[start]
-      swap(arr, start, storeIndex); // put the pivot value into correct bucket arr[storeIndex]
-      finalStoreIndex = storeIndex;
-  }
-  return finalStoreIndex;
+public int partition(final int[] arr, final int start, final int end) {
+    int pivot = arr[start];
+    int storeIndex = start; //partition1 and partition2 are initially empty
+    for (int i = start + 1; i <= end; i++) {
+        if (arr[i] < pivot) { // put smaller value in arr[i] into arr[start...storeIndex - 1]
+            swap(arr, storeIndex + 1, i);
+            storeIndex++; // increment storeIndex to be the end index of smaller partition
+        }
+    }
+    swap(arr, start, storeIndex);
+    return storeIndex;
 }
 ```
