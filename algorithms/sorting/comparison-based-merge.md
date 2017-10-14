@@ -60,3 +60,9 @@ In Merge Sort, the bulk of work is done in the conquer/merge step as the divide 
 * There are k moves from original array a to temporary array b and another k moves back.
 
 In total, number of operations inside **merge** operation is < 3k-1 = O(k).
+There are log(N) levels and in each level, we perform **Merge** O(N) work, thus the overall time complexity is O( Nlog(N) ). This is an optimal (comparison-based) sorting algorithm.
+
+## Pros and cons
+There are however, several not-so-good parts of Merge Sort. 
+* It is actually not easy to implement from scratch. 
+* It requires additional O(N) storage during merging operation, thus not really memory efficient.
