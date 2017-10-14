@@ -30,7 +30,7 @@ Total: O(N2)
 ```
 void selectionSort(int a[], int N){
   for(int L = 0; L < N - 1; L++){ // O(N)
-    find the position of the minimum element X ∈ [L..N-1] // O(N)
+    find the position X ∈ [L, N-1] of the minimum element  // O(N)
     swap(X, L) // O(1), note that X may be equal to L (no actual swap)
   }
 }
@@ -46,8 +46,9 @@ Insertion sort is similar to how most people arrange a hand of poker cards:
 void insertionSort(int a[], int N) {
   for (int i = 1; i < N; i++) { // O(N)
     X = a[i]; // X is the item to be inserted
-    for (j = i-1; j >= 0 && a[j] > X; j--) // can be fast or slow
+    for (j = i-1; j >= 0 && a[j] > X; j--){
       a[j+1] = a[j]; // make a place for X
+    }
     a[j+1] = X; // this is the insertion point
   }
 }
