@@ -25,6 +25,7 @@ do
 while swapped
 ```
 # Selection Sort
+
 Total: O(N2) 
 ```
 void selectionSort(int a[], int N){
@@ -34,7 +35,9 @@ void selectionSort(int a[], int N){
   }
 }
 ```
+
 # Insert Sort
+
 Insertion sort is similar to how most people arrange a hand of poker cards:  
 * Start with one card in your hand,
 * Pick the next card and insert it into its proper sorted order,
