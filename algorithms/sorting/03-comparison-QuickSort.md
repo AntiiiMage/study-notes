@@ -17,7 +17,7 @@ If you compare this with Merge Sort, you will see that Quick Sort D&C steps are 
 public void quickSort(final int[] arr,final int start, final int end){
   if(start < end){
       int storeIndex = fixStart(arr, start, end);
-      quickSort(arr, 0, storeIndex - 1);
+      quickSort(arr, start, storeIndex - 1);
       quickSort(arr, storeIndex + 1, end);
   }
 
