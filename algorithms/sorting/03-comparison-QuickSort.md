@@ -27,14 +27,14 @@ public int fixStart(final int[] arr,final int start, final int end){
   int pivot = arr[start];
   int storeIndex = start;
   for(int i = start + 1; i <= end; i ++){
-      if(arr[i] < pivot){
+      if(arr[i] < pivot){ // put smaller value in arr[i] into arr[start...storeIndex - 1]
           swap(arr, storeIndex + 1, i);
-          storeIndex ++;
+          storeIndex ++; // inrement storeIndex
       }
   }
   int finalStoreIndex = start;
-  if(pivot > arr[storeIndex]){
-      swap(arr, start, storeIndex);
+  if(pivot > arr[storeIndex]){// again put smaller value in arr[storeIndex] into arr[start]
+      swap(arr, start, storeIndex); // put the pivot value into correct bucket arr[storeIndex]
       finalStoreIndex = storeIndex;
   }
   return finalStoreIndex;
