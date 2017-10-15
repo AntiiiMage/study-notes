@@ -15,24 +15,39 @@ When i=(N−2), 1 iteration,
 When i=(N−1), 0 iteration.  
 Thus, the total number of iterations = (N−1)+(N−2)+...+1+0 = N*(N−1)/2  
 Total time = c*N*(N−1)/2 = O(N^2)  
-```
-do
-  swapped = false
-  for i = 1 to indexOfLastUnsortedElement-1
-    if leftElement > rightElement
-      swap(leftElement, rightElement)
-      swapped = true
-while swapped
-```
+
+```java
+ private void bubleSort(int[] arr){
+        for(int i = arr.length ; i > 0; i --){
+            for(int j = 0; j < i - 1; j ++){
+                if(arr[j + 1] < arr[j]) swap(arr, j, j + 1);
+            }
+        }
+    }
+
+    private void swap(int[] arr, int j, int i) {
+        int iValue = arr[i];
+        arr[i] = arr[j];
+        arr[j] = iValue;
+    }
+```  
+
 # Selection Sort
 
-Total: O(N2) 
-```
-void selectionSort(int a[], int N){
-  for(int L = 0; L < N - 1; L++){ // O(N)
-    find the position X ∈ [L, N-1] of the minimum element  // O(N)
-    swap(X, L) // O(1), note that X may be equal to L (no actual swap)
-  }
+Total: O(N2)  
+
+```java
+void selectSort(int[] arr){
+    for(int i = 0 ; i < arr.length; i ++){
+    	  //Find min value index in arr[i + 1... N]
+        int minIndex = i;
+        for(int j = i + 1; j < arr.length; j ++){
+            if(arr[j] < arr[i]){
+                minIndex = j;
+            }
+        }
+        swap(arr, i, minIndex);
+    }
 }
 ```
 
@@ -41,8 +56,9 @@ void selectionSort(int a[], int N){
 Insertion sort is similar to how most people arrange a hand of poker cards:  
 * Start with one card in your hand,
 * Pick the next card and insert it into its proper sorted order,
-* Repeat previous step for all cards.
-```
+* Repeat previous step for all 
+
+```java
 void insertionSort(int a[], int N) {
   for (int i = 1; i < N; i++) { // O(N)
     X = a[i]; // X is the item to be inserted
@@ -53,6 +69,7 @@ void insertionSort(int a[], int N) {
   }
 }
 ```
+
 The outer loop executes N−1 times, that's quite clear.  
 
 But the number of times the inner-loop is executed depends on the input:  
